@@ -1,26 +1,24 @@
 package n2ex02;
 
 public class Restaurant2 {
-	private String name;
-	private int score;
-	
-	public Restaurant2(String name, int score) {
-		super();
-		this.name = name;
-		this.score = score;
-	}
+    private String name;
+    private int score;
+
+    public Restaurant2(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
 
 	public String getName() {
-		return name;
-	}
+        return name;
+    }
 
-	public int getScore() {
-		return score;
-	}
- 
-	@Override
-	public String toString() {
-		return "Restaurant [name=" + name + ", score=" + score + "]";
-	}
-	
+    public int getScore() {
+        return score;
+    }
+
+    @Override
+    public String toString() {
+        return "name: " + name + ", score: " + score;
+    }
 }

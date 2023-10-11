@@ -1,39 +1,40 @@
 package n2ex01;
-
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
+import n2ex02.RestaurantSort2;
 
 public class N2ex01 {
 
 	public static void main(String[] args) {
-		Set<Restaurant2> restaurants2 = new TreeSet<Restaurant2>(Comparator.comparing(Restaurant2::getName));		
-		Set<String> names = new HashSet<>();
-		Set<Integer> scores = new HashSet<>();
+		
+		Set<Restaurant2> restaurants = new HashSet<>();
+		Set<RestaurantSort2> restaurantSort2 = new HashSet<>();
 
-		addRestaurant(restaurants2, names, scores, "Roca", 4);
-		addRestaurant(restaurants2, names, scores, "Goikos", 5);
-		addRestaurant(restaurants2, names, scores, "Roca", 4);
-		addRestaurant(restaurants2, names, scores, "Ruca", 7);
-		addRestaurant(restaurants2, names, scores, "Abzan", 8);
-		addRestaurant(restaurants2, names, scores, "Abzan", 5);
-		addRestaurant(restaurants2, names, scores, "Abzan", 4);
+		addRestaurant(restaurants, restaurantSort2, "Roca", 4);
+		addRestaurant(restaurants, restaurantSort2, "Goikos", 5);
+		addRestaurant(restaurants, restaurantSort2, "Goikos", 4);
+		addRestaurant(restaurants, restaurantSort2, "Goikos", 3);
+		addRestaurant(restaurants, restaurantSort2, "Roca", 4);
+		addRestaurant(restaurants, restaurantSort2, "Roca", 4);
+		addRestaurant(restaurants, restaurantSort2, "Abzan", 6);
+		addRestaurant(restaurants, restaurantSort2, "Abzan", 9);
+		addRestaurant(restaurants, restaurantSort2, "Abzan", 9);
+		addRestaurant(restaurants, restaurantSort2, "Abzan", 4);
+		addRestaurant(restaurants, restaurantSort2, "Abzan", 4);
 
-		for (Restaurant2 restaurant2 : restaurants2) {
-			System.out.println(restaurant2);
+		for (Restaurant2 restaurant : restaurants) {
+			System.out.println(restaurant);
 		}
 	}
 
-	public static void addRestaurant(Set<Restaurant2> restaurant2s, Set<String> names, Set<Integer> scores,String name, int score) {
+	public static void addRestaurant(Set<Restaurant2> restaurants, Set<RestaurantSort2> restaurantKeys, String name, int score) {
+		RestaurantSort2 sorter = new RestaurantSort2(name, score);
 
-		if (!names.contains(name) || !scores.contains(score)) {
-			Restaurant2 restaurant2 = new Restaurant2(name, score);
-			names.add(name);
-			scores.add(score);
-			restaurant2s.add(restaurant2);
+		if (restaurantKeys.add(sorter)) {
+			Restaurant2 restaurant = new Restaurant2(name, score);
+			restaurants.add(restaurant);
 		} else {
 			System.out.println("Restaurant duplicated: " + name + ", score: " + score);
 		}
-	}	
+	}
 }
