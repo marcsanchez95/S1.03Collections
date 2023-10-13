@@ -1,13 +1,12 @@
 package n2ex01;
 import java.util.HashSet;
 import java.util.Set;
-import n2ex02.RestaurantSort2;
 
 public class N2ex01 {
 
 	public static void main(String[] args) {
 		
-	        Set<Restaurant2> restaurants = new HashSet<>();
+	        Set<Restaurant> restaurants = new HashSet<>();
 
 	        addRestaurant(restaurants, "Roca", 4);
 	        addRestaurant(restaurants, "Goikos", 5);
@@ -21,12 +20,12 @@ public class N2ex01 {
 	        addRestaurant(restaurants, "Abzan", 4);
 	        addRestaurant(restaurants, "Abzan", 4);
 	        System.out.println("[** Showing all the  restaurants **]");
-	        for (Restaurant2 restaurant : restaurants) {
+	        for (Restaurant restaurant : restaurants) {
 	            System.out.println(restaurant);
 	        }
 	    }
-	    public static void addRestaurant(Set<Restaurant2> restaurants, String name, int score) {
-	        Restaurant2 restaurant = new Restaurant2(name, score);
+	    public static void addRestaurant(Set<Restaurant> restaurants, String name, int score) {
+	        Restaurant restaurant = new Restaurant(name, score);
 
 	        if (restaurants.add(restaurant)) {
 	        	System.out.println("Added the restaurant :"+restaurant.getName()+", with score of: "+ restaurant.getScore());
