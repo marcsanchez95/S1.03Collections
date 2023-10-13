@@ -7,34 +7,31 @@ public class N2ex01 {
 
 	public static void main(String[] args) {
 		
-		Set<Restaurant2> restaurants = new HashSet<>();
-		Set<RestaurantSort2> restaurantSort2 = new HashSet<>();
+	        Set<Restaurant2> restaurants = new HashSet<>();
 
-		addRestaurant(restaurants, restaurantSort2, "Roca", 4);
-		addRestaurant(restaurants, restaurantSort2, "Goikos", 5);
-		addRestaurant(restaurants, restaurantSort2, "Goikos", 4);
-		addRestaurant(restaurants, restaurantSort2, "Goikos", 3);
-		addRestaurant(restaurants, restaurantSort2, "Roca", 4);
-		addRestaurant(restaurants, restaurantSort2, "Roca", 4);
-		addRestaurant(restaurants, restaurantSort2, "Abzan", 6);
-		addRestaurant(restaurants, restaurantSort2, "Abzan", 9);
-		addRestaurant(restaurants, restaurantSort2, "Abzan", 9);
-		addRestaurant(restaurants, restaurantSort2, "Abzan", 4);
-		addRestaurant(restaurants, restaurantSort2, "Abzan", 4);
+	        addRestaurant(restaurants, "Roca", 4);
+	        addRestaurant(restaurants, "Goikos", 5);
+	        addRestaurant(restaurants, "Goikos", 4);
+	        addRestaurant(restaurants, "Goikos", 3);
+	        addRestaurant(restaurants, "Roca", 4);
+	        addRestaurant(restaurants, "Roca", 4);
+	        addRestaurant(restaurants, "Abzan", 6);
+	        addRestaurant(restaurants, "Abzan", 9);
+	        addRestaurant(restaurants, "Abzan", 9);
+	        addRestaurant(restaurants, "Abzan", 4);
+	        addRestaurant(restaurants, "Abzan", 4);
+	        System.out.println("[** Showing all the  restaurants **]");
+	        for (Restaurant2 restaurant : restaurants) {
+	            System.out.println(restaurant);
+	        }
+	    }
+	    public static void addRestaurant(Set<Restaurant2> restaurants, String name, int score) {
+	        Restaurant2 restaurant = new Restaurant2(name, score);
 
-		for (Restaurant2 restaurant : restaurants) {
-			System.out.println(restaurant);
-		}
+	        if (restaurants.add(restaurant)) {
+	        	System.out.println("Added the restaurant :"+restaurant.getName()+", with score of: "+ restaurant.getScore());
+	        } else {
+	            System.out.println("Restaurant duplicated: " + restaurant.getName() + ", score: " + restaurant.getScore());
+	        }
+	    }
 	}
-
-	public static void addRestaurant(Set<Restaurant2> restaurants, Set<RestaurantSort2> restaurantKeys, String name, int score) {
-		RestaurantSort2 sorter = new RestaurantSort2(name, score);
-
-		if (restaurantKeys.add(sorter)) {
-			Restaurant2 restaurant = new Restaurant2(name, score);
-			restaurants.add(restaurant);
-		} else {
-			System.out.println("Restaurant duplicated: " + name + ", score: " + score);
-		}
-	}
-}
