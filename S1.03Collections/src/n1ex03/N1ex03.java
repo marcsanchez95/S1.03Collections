@@ -14,7 +14,7 @@ public class N1ex03 {
 		ArrayList<Integer> randomNums = new ArrayList<Integer>();
 		String playerName;
 		String result;
-		//Cambiar el string que se envia con el show.Content al directorio donde se tenga el archivo countries.txt
+		//Cambiar el string que envia amb el show.Content al directori on es tingui l'archiu countries.txt
 		HashMap<String, String> capitalCities = readText
 				.showContent("C:\\Users\\marcs\\OneDrive\\Escritorio\\Programasao\\countries.txt");
 		
@@ -78,9 +78,10 @@ public class N1ex03 {
 		
 		
 	}
+	//cambiar el directori del fileWriter a un valid.
 	public static void writeText(String result) {
 					
-		try {
+		try {			
 			FileWriter archivo = new FileWriter("C:\\Users\\marcs\\OneDrive\\Escritorio\\Programasao\\results.txt");
 			archivo.write(result);
 			archivo.close();

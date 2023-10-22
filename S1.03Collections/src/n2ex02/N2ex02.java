@@ -22,6 +22,7 @@ public class N2ex02 {
 		addRestaurant(restaurants, "Abzan", 9);
 		addRestaurant(restaurants, "Abzan", 4);
 		addRestaurant(restaurants, "Abzan", 4);
+		
 		System.out.println("[** Showing all the  restaurants **]");
 		for (Restaurant2 restaurant : restaurants) {
 			System.out.println(restaurant);
