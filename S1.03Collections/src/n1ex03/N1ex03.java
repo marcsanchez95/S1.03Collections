@@ -1,5 +1,6 @@
 package n1ex03;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,8 +16,9 @@ public class N1ex03 {
 		String playerName;
 		String result;
 		//Cambiar el string que envia amb el show.Content al directori on es tingui l'archiu countries.txt
+		String absolutePath = new File("./src/n1ex03/countries.txt").getAbsolutePath();
 		HashMap<String, String> capitalCities = readText
-				.showContent("C:\\Users\\marcs\\OneDrive\\Escritorio\\Programasao\\countries.txt");
+				.showContent(absolutePath);
 		
 		randomNums = getRandomNumbers(capitalCities);		
 		randomNums = getRandomNumbers(capitalCities);
@@ -81,8 +83,9 @@ public class N1ex03 {
 	//cambiar el directori del fileWriter a un valid.
 	public static void writeText(String result) {
 					
-		try {			
-			FileWriter archivo = new FileWriter("C:\\Users\\marcs\\OneDrive\\Escritorio\\Programasao\\results.txt");
+		try {
+			String absolutePath = new File("./src/n1ex03/results.txt").getAbsolutePath();
+			FileWriter archivo = new FileWriter(absolutePath);
 			archivo.write(result);
 			archivo.close();
 			System.out.println("The data was successfully written to the file results.txt");
