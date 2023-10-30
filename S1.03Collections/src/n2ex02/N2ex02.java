@@ -32,12 +32,7 @@ public class N2ex02 {
 	public static void addRestaurant(Set<Restaurant2> restaurants, String name, int score) {
 
 		Restaurant2 restaurant = new Restaurant2(name, score);
+		restaurants.add(restaurant);
 
-		if (restaurants.add(restaurant)) {
-			System.out.println("Added the restaurant :"+restaurant.getName()+", with score of: "+ restaurant.getScore());
-
-		} else {
-			System.out.println("Restaurant duplicated: " + restaurant.getName() + ", with score of: " + restaurant.getScore());
-		}
 	}
 }
