@@ -45,7 +45,7 @@ public class N1ex01 {
 					months.add(i, month8);
 				}
 			}
-			System.out.println("list with August added: "+months);
+			System.out.println("List with August added: "+months);
 
 			// Afageix-o els objectes de l'array a un HashSet que instancio.
 			HashSet<Month> months2 = new HashSet<Month>();
@@ -55,10 +55,12 @@ public class N1ex01 {
 			months2.add((new Month("January")));
 			
 			//Recorro el hashSet amb un for each
+			System.out.println("\nRecorrent el hashSet amb un bucle for each:");
 			for (Month month : months2) {
 				System.out.println(month);
 			}
-			System.out.println("");
+			
+			System.out.println("\nRecorrent el hashSet amb un iterator:");
 			// recorro el hashSet amb un iterator
 			Iterator<Month> it = months2.iterator();
 			while (it.hasNext()) {
