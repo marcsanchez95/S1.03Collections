@@ -37,14 +37,15 @@ public class N1ex01 {
 			months.add(month11);
 			Month month12 = new Month("December");
 			months.add(month12);
+			System.out.println("List without August added: "+months);
 			
 			// recorre l'array i afegeix agost a la posicio que li correspon
-			for (int i = 0; i <= 7; i++) {
+			for (int i = 7; i <= 7; i++) {
 				if (i == 7) {
 					months.add(i, month8);
 				}
 			}
-			//System.out.println(months);
+			System.out.println("list with August added: "+months);
 
 			// Afageix-o els objectes de l'array a un HashSet que instancio.
 			HashSet<Month> months2 = new HashSet<Month>();

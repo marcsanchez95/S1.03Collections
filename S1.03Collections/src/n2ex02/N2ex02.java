@@ -9,7 +9,7 @@ public class N2ex02 {
 
 	public static void main(String[] args) {
 
-		Set<Restaurant2> restaurants = new TreeSet<>(Comparator.comparing(Restaurant2::getName).thenComparing(Restaurant2::getScore, Comparator.reverseOrder()));
+		Set<Restaurant2> restaurants = new TreeSet<>(Comparator.comparing(Restaurant2::getName).thenComparing(Restaurant2::getScore));
 
 		addRestaurant(restaurants, "Roca", 4);
 		addRestaurant(restaurants, "Goikos", 5);
